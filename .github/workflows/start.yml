@@ -3,6 +3,9 @@ run-name: Tests run
 on: workflow_dispatch
 env:
   ENVIRONMENT: prod
+  BASE_URL: https://www.saucedemo.com
+  USERNAME1: standard_user
+  PASSWORD: Hello
 jobs:
   firstJob:
     name: "Run tests"
