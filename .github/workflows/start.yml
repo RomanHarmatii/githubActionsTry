@@ -1,5 +1,6 @@
 name: Workflow name
 run-name: Workflow name run name
+on: push
 jobs:
   firstJob:
     name: "first job"
