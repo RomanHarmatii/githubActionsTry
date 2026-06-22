@@ -1,0 +1,9 @@
+name: Workflow name
+run-name: Workflow name run name
+jobs:
+  firstJob:
+    name: "first job"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting
+      - run: echo "hello world!"
