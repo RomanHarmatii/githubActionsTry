@@ -9,6 +9,6 @@ jobs:
       - uses: docker/setup-docker-action@v5
       - uses: actions/checkout@v6
       - name: Docker build
-        run: docker build cypress:pipeline .
+        run: docker build -t cypress:pipeline .
       - name: Docker run
         run: docker run cypress:pipeline
