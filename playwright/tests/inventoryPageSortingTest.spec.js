@@ -2,7 +2,7 @@ import InventoryPage from "../helpers/Page Objects/InventoryPage";
 import LoginPage from "../helpers/Page Objects/LoginPage";
 import { test, expect } from "@playwright/test";
 
-test.describe("Sorting testing", () => {
+test.describe("Sorting testing", { tag: "@regression" }, () => {
   test.beforeEach(async ({ page }) => {
     const loginPage = new LoginPage(page);
 

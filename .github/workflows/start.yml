@@ -6,9 +6,14 @@ jobs:
     name: "Run tests"
     runs-on: ubuntu-latest
     steps:
-      - uses: docker/setup-docker-action@v5
       - uses: actions/checkout@v6
-      - name: Docker build
-        run: docker build -t cypress:pipeline .
-      - name: Docker run
-        run: docker run cypress:pipeline
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+      - name: Npm install
+        run: npm install
+      - name: Npm install
+        run: npm install playwright
+      - name: run tests
+        run: npx playwrigh test
