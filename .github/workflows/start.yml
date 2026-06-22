@@ -1,6 +1,8 @@
 name: Tests
 run-name: Tests run
 on: workflow_dispatch
+env:
+  ENVIRONMENT: prod
 jobs:
   firstJob:
     name: "Run tests"
