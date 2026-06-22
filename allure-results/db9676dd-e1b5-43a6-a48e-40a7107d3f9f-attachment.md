@@ -1,0 +1,49 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: footerTests.spec.js >> Footer tests >> Facebook redirect test
+- Location: playwright\tests\footerTests.spec.js:16:3
+
+# Error details
+
+```
+Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
+Call log:
+  - navigating to "/", waiting until "load"
+
+```
+
+# Test source
+
+```ts
+  1  | import Footer from "../Components/Footer";
+  2  | import { expect } from "@playwright/test";
+  3  | import Header from "../Components/Header";
+  4  | 
+  5  | export default class {
+  6  |   _url;
+  7  | 
+  8  |   constructor(page, url) {
+  9  |     this._url = url;
+  10 |     this._page = page;
+  11 |     this.footer = new Footer(page);
+  12 |     this.header = new Header(page);
+  13 |   }
+  14 | 
+  15 |   async navigate() {
+> 16 |     await this._page.goto(this._url, { waitUntil: "load" });
+     |                      ^ Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
+  17 |     await this.containUrlCheck(`${process.env.BASE_URL}${this._url}`);
+  18 |   }
+  19 | 
+  20 |   async containUrlCheck(expectedUrl) {
+  21 |     await expect(await this._page.url()).toContain(expectedUrl);
+  22 |   }
+  23 | }
+  24 | 
+```
