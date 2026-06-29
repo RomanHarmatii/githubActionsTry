@@ -11,9 +11,6 @@ const env = process.env.ENVIRONMENT;
 
 dotenv.config({ path: `.env.${env}` });
 
-const username = process.env.USERNAME1;
-const test = process.env.PASSWORD;
-
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -21,7 +18,8 @@ export default defineConfig({
   expect: {
     timeout: 10_000,
   },
-  testDir: "./playwright/tests",
+  // testDir: "./playwright/tests",
+  testMatch: /.*\.spec\.js|ts$/,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

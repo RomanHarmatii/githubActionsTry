@@ -1,0 +1,12 @@
+[
+  {
+    name: 'hello',
+    value: 'hello2',
+    domain: 'example.cypress.io',
+    path: '/commands/',
+    expires: -1,
+    httpOnly: false,
+    secure: true,
+    sameSite: 'Lax'
+  }
+]
